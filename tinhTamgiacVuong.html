@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinhTamGiacVuong</title>
+</head>
+<body>
+<script>
+    let a = +prompt('viết cạnh thứ nhất của tam giác')
+    let b = +prompt('viết cạnh thứ hai của tam giác')
+    let c = +prompt('viết cạnh thứ ba của tam giác')
+    if (a < b + c && b < a + c && c < a + b) {
+        if (a * a == b * b * +c * c || b * b == a * a + c * c || c * c == a * a + b * b) {
+            document.write('day la tam giac vuong')
+        }else{
+            document.write('day khong phai tam giac vuong')
+        }
+    } else {
+        document.write("day khong phai la tam giac")
+    }
+
+
+</script>
+
+
+</body>
+</html>

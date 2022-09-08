@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VaChamAnh</title>
+</head>
+<body onload="doReady()">
+
+<img id="dung" src="image/khunglong1.webp" alt="anhDangTai"  >
+<img id="diep" src="image/khunglong2.jpg" alt="anhDangTai"  >
+</div>
+<script>
+
+    let dung = document.getElementById("dung")
+    let diep = document.getElementById("diep")
+
+
+function init() {
+    dung.style.left = 0 + 'px';
+    dung.style.top = 0 + 'px';
+    dung.style.position = 'absolute'
+    dung.style.width=200 +'px'
+    dung.style.height= 200 + 'px'
+    diep.style.left = 600 + 'px';
+    diep.style.top = 600 + 'px';
+    diep.style.width=200 +'px'
+    diep.style.height= 200 + 'px'
+    diep.style.position = 'absolute';
+}
+init();
+
+    function upArrowPressed(){
+
+        dung.style.top=parseInt(dung.style.top) -10 +'px';
+    }
+    function dowArrowPressed(){
+
+        dung.style.top=parseInt(dung.style.top) + 10 +'px';
+    }
+    function leftArrowPressed(){
+
+        dung.style.left=parseInt(dung.style.left)-10+'px';
+    }
+    function rightArrowPressed(){
+
+        dung.style.left=parseInt(dung.style.left) +10 +'px';
+    }
+    function moveSelection(evt){
+        console.log('left cua dung --->',dung.style.left)
+        // console.log('top cua Dung------->', dung.style.top)
+        checkVaCHam()
+        switch (evt.keyCode){
+            case 37:
+                leftArrowPressed();
+                break;
+            case  39:
+                rightArrowPressed();
+                break;
+            case  38:
+                upArrowPressed();
+                break;
+            case 40:
+                dowArrowPressed();
+                break;
+        }
+
+    }
+    function doReady(){
+        window.addEventListener('keydown', moveSelection);
+    }
+
+function checkVaCHam() {
+    // console.log('l1+w1 --->', L1+W1)
+    // console.log('l2--->', L1+W1)
+    let L1= parseInt(dung.style.left)
+    let T1= parseInt(dung.style.top)
+    let W1=parseInt(dung.style.width)
+    let H1= parseInt(dung.style.height)
+    let L2 =parseInt(diep.style.left)
+    let T2 = parseInt(diep.style.top)
+    let W2 = parseInt(diep.style.width)
+    let H2=  parseInt(diep.style.height)
+
+    console.log("===ww1=l1=====....", L1+W1)
+    console.log("======l2====>", L2)
+    if (L1+W1>=L2 && T1+H1>=T2 && T1<=T2+H2 && L1<=L2+W2){
+            alert('co va cham')
+        console.log()
+        }
+}
+
+</script>
+</body>
+</html>
